@@ -33,7 +33,7 @@ export default class Login extends Component {
           <input type='password' ref='password' name='password' placeholder='Password'/>
           <button type='submit'>Login</button>
         </form>
-        <Link to='/signup'>Need an account?</Link>
+        <Link to='/signup'>Create an account</Link>
       </div>
     );
   }
