@@ -1,8 +1,10 @@
 import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
 import { Tracker } from 'meteor/tracker';
+import { Session } from 'meteor/session';
 
 import { onAuthChange, routes } from './../imports/routes/routes';
+import './../imports/startup/simple-schema-configuration';
 
 Tracker.autorun(() => {
   const isAuthenticated = !!Meteor.userId();
@@ -10,5 +12,6 @@ Tracker.autorun(() => {
 });
 
 Meteor.startup(() => {
+  Session.set('showVisible', true);
   render(routes, document.getElementById('app'));
 });
